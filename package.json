@@ -8,7 +8,6 @@
     "dev": "NODE_ENV=development nodemon src/index.js"
   },
   "dependencies": {
-    "ioredis": "^4.11.2",
     "node-fetch": "^2.6.0",
     "query-string": "^6.8.1"
   },
