@@ -1,11 +1,7 @@
-const express = require('express');
 const validateInput = require('./validate-input');
 const fetchStockData = require('./fetch-stock-data');
 
-const app = express();
-const port = 10101;
-
-app.get('/', async (req, res) => {
+module.exports = async (req, res) => {
   const [valid, error, { symbol, since: S, until: U }] = validateInput(req.query);
 
   if (!valid) {
@@ -42,6 +38,4 @@ app.get('/', async (req, res) => {
   } catch (e) {
     return res.json(data);
   }
-});
-
-app.listen(port, () => console.log(`Running on :${port} 👍`));
+};
